@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from './todo-item/todo';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-todo';
-  todos: string[] = [];
+  todos: Todo[] = [];
 
   addTodo(newTask: string): void {
-    console.log(this);
-    
-    this.todos.push(newTask);
+    this.todos.unshift({
+      todo: newTask,
+      created_at: new Date(),
+      completed: false,
+      completed_at: null,
+    });
+  }
+
+  removeTodo(){
+
   }
 }

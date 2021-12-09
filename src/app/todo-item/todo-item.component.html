@@ -1,0 +1,16 @@
+<li>
+    {{todo.todo}}
+    <div class="buttons">
+        <button class="remove">
+            <i class="fa fa-trash fs-19 text-danger"></i>
+        </button>
+        <button class="complete" *ngIf="!todo.completed; else notComplete" (click)="completeTask()">
+            <i class="fa fa-check fs-19 text-success"></i>
+        </button>
+        <ng-template #notComplete>
+            <button class="complete" (click)="undoComplete()">
+                <i class="fa fa-times fs-19 text-danger"></i>
+            </button>
+        </ng-template>
+    </div>
+</li>
