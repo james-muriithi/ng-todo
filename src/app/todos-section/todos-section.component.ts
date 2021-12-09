@@ -9,6 +9,8 @@ import { Todo } from '../todo-item/todo';
 export class TodosSectionComponent implements OnInit {
   @Input() todos: Todo[] = [];
 
+  @Input() removeTodo: (index:number) => void;
+
   constructor() {}
 
   ngOnInit(): void {}

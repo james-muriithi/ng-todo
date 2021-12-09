@@ -9,6 +9,10 @@ import { Todo } from './todo';
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
 
+  @Input() index: number;
+
+  @Input() removeTodo: (index: number) => void;
+
   notComplete: any;
 
   constructor() {}
@@ -19,8 +23,8 @@ export class TodoItemComponent implements OnInit {
     this.todo.completed = true;
     this.todo.completed_at = new Date();
   }
-  undoComplete(){
+  undoComplete() {
     this.todo.completed = false;
-    this.todo.completed_at = null;    
+    this.todo.completed_at = null;
   }
 }

@@ -1,13 +1,13 @@
 <div class="container">
     <!-- incomplete tasks -->
     <ul class="todos">
-        <app-todo-item *ngFor="let todo of incompleteTodos()" [todo]="todo">
+        <app-todo-item [removeTodo]="removeTodo" *ngFor="let todo of incompleteTodos();index as i" [index]="i" [todo]="todo">
             {{todo.todo}}
         </app-todo-item>
     </ul>
     <!-- complete tasks -->
     <ul class="completed">
-        <app-todo-item *ngFor="let todo of completedTodos()" [todo]="todo">
+        <app-todo-item [removeTodo]="removeTodo" *ngFor="let todo of completedTodos();index as i" [index]="i" [todo]="todo">
             {{todo.todo}}
         </app-todo-item>
     </ul>

@@ -1,7 +1,7 @@
 <li>
     {{todo.todo}}
     <div class="buttons">
-        <button class="remove">
+        <button class="remove" (click)="removeTodo(index)">
             <i class="fa fa-trash fs-19 text-danger"></i>
         </button>
         <button class="complete" *ngIf="!todo.completed; else notComplete" (click)="completeTask()">

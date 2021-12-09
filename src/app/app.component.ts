@@ -19,7 +19,7 @@ export class AppComponent {
     });
   }
 
-  removeTodo(){
-
+  removeTodo(todoIndex: number){
+    this.todos = this.todos.filter((_,index) => index != todoIndex);
   }
 }
