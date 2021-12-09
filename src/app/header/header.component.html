@@ -1,7 +1,7 @@
 <header>
     <div class="container-fluid">
         <input class="form-control" [(ngModel)]="newTask" type="text" placeholder="Enter your task here" />
-        <button id="add" type="submit" aria-label="Add a task">
+        <button id="add" type="submit" aria-label="Add a task" (click)="addNewTask()">
             <i class="fa fa-plus text-white fs-19"></i>
         </button>
 
